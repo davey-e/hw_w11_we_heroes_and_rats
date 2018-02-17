@@ -21,4 +21,8 @@ describe("Hero Tests", function(){
     assert.strictEqual(hero1.favouriteFood, "Rabbit");
   });
 
+  it("should be able to say their name", function(){
+    assert.strictEqual(hero1.sayName(), "Hello, my name is Sir Lancelot the Brave");
+  });
+
 })
