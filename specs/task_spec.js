@@ -3,6 +3,8 @@ const Task = require('../task.js');
 
 describe("Task Tests", function(){
 
+  let task1;
+
   beforeEach("Setup", function(){
     task1 = new Task("Find the Holy Grail", "Almost impossible", "Before King Arthur has a tantrum", 100);
   });
@@ -26,5 +28,10 @@ describe("Task Tests", function(){
   it("should have a completed status which starts as false", function(){
     assert.strictEqual(task1.completed, false);
   });
+
+  it("should be able to change completed to true", function(){
+    task1.markAsComplete();
+    assert.strictEqual(task1.completed, true);
+  })
 
 })
