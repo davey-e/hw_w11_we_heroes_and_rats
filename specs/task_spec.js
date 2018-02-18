@@ -23,4 +23,8 @@ describe("Task Tests", function(){
     assert.strictEqual(task1.reward, 100);
   });
 
+  it("should have a completed status which starts as false", function(){
+    assert.strictEqual(task1.completed, false);
+  });
+
 })
