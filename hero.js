@@ -8,5 +8,8 @@ Hero.prototype.sayName = function(){
   return "Hello, my name is " + this.name;
 }
 
+Hero.prototype.eatFood = function(foodToEat){
+  this.health += foodToEat.replenishmentValue;
+}
 
 module.exports = Hero;
