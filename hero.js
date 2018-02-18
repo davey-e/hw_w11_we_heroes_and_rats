@@ -9,7 +9,11 @@ Hero.prototype.sayName = function(){
 }
 
 Hero.prototype.eatFood = function(foodToEat){
+  if(foodToEat.name === this.favouriteFood){
+    this.health += (foodToEat.replenishmentValue * 1.5);
+  } else {
   this.health += foodToEat.replenishmentValue;
+  }
 }
 
 module.exports = Hero;

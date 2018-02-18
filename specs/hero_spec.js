@@ -5,11 +5,13 @@ const Food = require('../food.js');
 describe("Hero Tests", function(){
 
   let hero1;
-  let food1;
+  let spam;
+  let rabbit;
 
   beforeEach("Setup", function(){
-    hero1 = new Hero("Sir Lancelot the Brave", 100, "Rabbit");
-    food1 = new Food("Spam", 50);
+    hero1 = new Hero("Sir Lancelot the Brave", 100, "Spam");
+    spam = new Food("Spam", 50);
+    rabbit = new Food("Rabbit", 20);
   });
 
   it("should have a name", function(){
@@ -21,7 +23,7 @@ describe("Hero Tests", function(){
   });
 
   it("should have a favourite food", function(){
-    assert.strictEqual(hero1.favouriteFood, "Rabbit");
+    assert.strictEqual(hero1.favouriteFood, "Spam");
   });
 
   it("should be able to say their name", function(){
@@ -29,8 +31,13 @@ describe("Hero Tests", function(){
   });
 
   it("should be able to eat food to increase health", function(){
-    hero1.eatFood(food1);
-    assert.strictEqual(hero1.health, 150);
+    hero1.eatFood(rabbit);
+    assert.strictEqual(hero1.health, 120);
   });
+
+  it("should be able to eat food and increase health by 1.5 times if favourite food", function(){
+    hero1.eatFood(spam);
+    assert.strictEqual(hero1.health, 175);
+  })
 
 })
