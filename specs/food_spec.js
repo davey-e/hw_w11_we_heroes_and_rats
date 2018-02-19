@@ -21,4 +21,9 @@ describe("Food Tests", function(){
     assert.strictEqual(food1.poisoned, false);
   })
 
+  it("should be able to change poisoned to true", function(){
+    food1.makePoisonous();
+    assert.strictEqual(food1.poisoned, true);
+  })
+
 })
