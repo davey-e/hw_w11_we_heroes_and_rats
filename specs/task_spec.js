@@ -6,7 +6,7 @@ describe("Task Tests", function(){
   let task1;
 
   beforeEach("Setup", function(){
-    task1 = new Task("Find the Holy Grail", "Almost impossible", "Before King Arthur has a tantrum", 100);
+    task1 = new Task("Find the Holy Grail", 50, 20, 100);
   });
 
   it("should have a description", function(){
@@ -14,11 +14,11 @@ describe("Task Tests", function(){
   });
 
   it("should have a difficulty level", function(){
-    assert.strictEqual(task1.difficulty, "Almost impossible");
+    assert.strictEqual(task1.difficulty, 50);
   });
 
   it("should have an urgency level", function(){
-    assert.strictEqual(task1.urgency, "Before King Arthur has a tantrum");
+    assert.strictEqual(task1.urgency, 20);
   });
 
   it("should have a reward", function(){
