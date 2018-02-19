@@ -18,27 +18,15 @@ Hero.prototype.eatFood = function(foodToEat){
 }
 
 function compareDifficulty(a,b) {
-  if (a.difficulty < b.difficulty)
-    return -1;
-  if (a.difficulty > b.difficulty)
-    return 1;
-  return 0;
+  return a.difficulty - b.difficulty;
 }
 
 function compareUrgency(a,b) {
-  if (a.urgency < b.urgency)
-    return -1;
-  if (a.urgency > b.urgency)
-    return 1;
-  return 0;
+  return a.urgency - b.urgency;
 }
 
 function compareReward(a,b) {
-  if (a.reward < b.reward)
-    return -1;
-  if (a.reward > b.reward)
-    return 1;
-  return 0;
+  return a.reward - b.reward;
 }
 
 Hero.prototype.sortTasks = function(sortProperty){
