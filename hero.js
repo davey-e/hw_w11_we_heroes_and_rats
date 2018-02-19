@@ -17,4 +17,38 @@ Hero.prototype.eatFood = function(foodToEat){
   }
 }
 
+function compareDifficulty(a,b) {
+  if (a.difficulty < b.difficulty)
+    return -1;
+  if (a.difficulty > b.difficulty)
+    return 1;
+  return 0;
+}
+
+function compareUrgency(a,b) {
+  if (a.urgency < b.urgency)
+    return -1;
+  if (a.urgency > b.urgency)
+    return 1;
+  return 0;
+}
+
+function compareReward(a,b) {
+  if (a.reward < b.reward)
+    return -1;
+  if (a.reward > b.reward)
+    return 1;
+  return 0;
+}
+
+Hero.prototype.sortTasks = function(sortProperty){
+  if(sortProperty === "difficulty"){
+    this.tasks.sort(compareDifficulty);
+  } else if (sortProperty === "urgency"){
+    this.tasks.sort(compareUrgency);
+  } else if (sortProperty === "reward"){
+    this.tasks.sort(compareReward);
+  }
+}
+
 module.exports = Hero;

@@ -16,6 +16,7 @@ describe("Hero Tests", function(){
     rabbit = new Food("Rabbit", 20);
     task1 = new Task("Find the Holy Grail", 50, 20, 100);
     task2 = new Task("Rescue Prince Herbert from Swamp Castle", 25, 10, 50);
+    task3 = new Task("Slay the Rabbit of Caerbannog", 100, 5, 75);
   });
 
   it("should have a name", function(){
@@ -52,6 +53,30 @@ describe("Hero Tests", function(){
   it("should be able to eat food and increase health by 1.5 times if favourite food", function(){
     hero1.eatFood(spam);
     assert.strictEqual(hero1.health, 175);
+  });
+
+  it("should be able to sort tasks by difficulty", function(){
+    hero1.tasks.push(task1);
+    hero1.tasks.push(task2);
+    hero1.tasks.push(task3);
+    hero1.sortTasks("difficulty");
+    assert.deepStrictEqual(hero1.tasks, [task2, task1, task3]);
+  });
+
+  it("should be able to sort tasks by urgency", function(){
+    hero1.tasks.push(task1);
+    hero1.tasks.push(task2);
+    hero1.tasks.push(task3);
+    hero1.sortTasks("urgency");
+    assert.deepStrictEqual(hero1.tasks, [task3, task2, task1]);
+  });
+
+  it("should be able to sort tasks by reward", function(){
+    hero1.tasks.push(task1);
+    hero1.tasks.push(task2);
+    hero1.tasks.push(task3);
+    hero1.sortTasks("reward");
+    assert.deepStrictEqual(hero1.tasks, [task2, task3, task1]);
   });
 
 })
