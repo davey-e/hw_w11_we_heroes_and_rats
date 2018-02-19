@@ -79,4 +79,22 @@ describe("Hero Tests", function(){
     assert.deepStrictEqual(hero1.tasks, [task2, task3, task1]);
   });
 
+  it("should be able to view completed tasks", function(){
+    hero1.tasks.push(task1);
+    hero1.tasks.push(task2);
+    hero1.tasks.push(task3);
+    hero1.tasks[0].markAsComplete();
+    hero1.tasks[2].markAsComplete();
+    assert.deepStrictEqual(hero1.viewTasksByCompletedStatus("completed"), [task1, task3]);
+  });
+
+  it("should be able to view incomplete tasks", function(){
+    hero1.tasks.push(task1);
+    hero1.tasks.push(task2);
+    hero1.tasks.push(task3);
+    hero1.tasks[0].markAsComplete();
+    hero1.tasks[2].markAsComplete();
+    assert.deepStrictEqual(hero1.viewTasksByCompletedStatus("incomplete"), [task2]);
+  });
+
 })

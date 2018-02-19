@@ -51,4 +51,15 @@ Hero.prototype.sortTasks = function(sortProperty){
   }
 }
 
+Hero.prototype.viewTasksByCompletedStatus = function(status){
+  const result = this.tasks.filter(function(task){
+    if(status === "completed"){
+      return task.completed === true;
+    } else if(status === "incomplete"){
+      return task.completed === false;
+    }
+  });
+  return result;
+}
+
 module.exports = Hero;
